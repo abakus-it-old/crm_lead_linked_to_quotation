@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        <record model="ir.ui.view" id="view_sale_order_with_lead">
+            <field name="name">sale.order.with.lead</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="groups_id" eval="[(6,0,[ref('base.group_sale_salesman')])]"/>
+            <field name="arch" type="xml">
+                <field name="client_order_ref" position="after">
+                    <field name="opportunity_id" domain="['('partner_id', '=', partner_id)]" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
