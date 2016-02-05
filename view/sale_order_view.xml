@@ -8,7 +8,7 @@
             <field name="groups_id" eval="[(6,0,[ref('base.group_sale_salesman')])]"/>
             <field name="arch" type="xml">
                 <field name="client_order_ref" position="after">
-                    <field name="opportunity_id" domain="['|', '|', ('partner_id.parent_id', '=', partner_id), ('partner_id', '=', partner_id), ('partner_id.child_ids', 'in', partner_id)]" />
+                    <field name="opportunity_id" domain="[('stage_id', '!=', 'Won'), ('stage_id', '!=', 'Lost'), '|', '|', ('partner_id.parent_id', '=', partner_id), ('partner_id', '=', partner_id), ('partner_id.child_ids', 'in', partner_id)]" />
                 </field>
             </field>
         </record>
