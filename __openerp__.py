@@ -7,7 +7,14 @@
     'category': 'Sale/CRM',
     'description': 
     """
-    This modules adds some the possibility to get quotations made regarding an opportunity.
+Quotations from and to CRM Leads
+This modules adds a possible linkage between CRM Leads and Quotations.
+
+On Leads, it is possible to list linked quotations and create new ones related.
+
+On quotations, it is possible to link the document to a specific Lead for the same customer.
+
+This module has been developed by Valentin THIRION @ AbAKUS it-solutions.
     """,
     'data': [
         'view/crm_lead_view.xml',
