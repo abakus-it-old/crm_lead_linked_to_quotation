@@ -7,11 +7,11 @@
             <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
             <field name="arch" type="xml">
                 <!-- Quotations -->
-                <page string="Lead" position="after">
+                <xpath expr="//notebook[last()]" position="inside">
                     <page string="Quotations and Sales Order">
                         <field name="quotation_ids" />
                     </page>
-                </page>
+                </xpath>
             </field>
         </record>
     </data>
