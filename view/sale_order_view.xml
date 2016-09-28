@@ -7,9 +7,9 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="groups_id" eval="[(6,0,[ref('base.group_sale_salesman')])]"/>
             <field name="arch" type="xml">
-                <field name="opportunity_id" position="replace">
-                    <field name="opportunity_id" domain="[('stage_id', '!=', 'Won'), ('stage_id', '!=', 'Lost'), '|', '|', ('partner_id.parent_id', '=', partner_id), ('partner_id', '=', partner_id), ('partner_id.child_ids', 'in', partner_id)]"/>
-                </field>
+		<xpath expr="//field[@name='company_id']" position="after">
+			<field name="opportunity_id" domain="[('stage_id', '!=', 'Won'), ('stage_id', '!=', 'Lost'), '|', '|', ('partner_id.parent_id', '=', partner_id), ('partner_id', '=', partner_id), ('partner_id.child_ids', 'in', partner_id)]"/>
+		</xpath>
             </field>
         </record>
     </data>
